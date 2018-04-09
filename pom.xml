@@ -135,6 +135,12 @@
                     <artifactId>cas-server-support-jdbc-drivers</artifactId>
                     <version>${cas.version}</version>
                 </dependency>
+                <!-- https://apereo.github.io/cas/5.2.x/installation/JSON-Service-Management.html -->
+                <dependency>
+                    <groupId>org.apereo.cas</groupId>
+                    <artifactId>cas-server-support-json-service-registry</artifactId>
+                    <version>${cas.version}</version>
+                </dependency>
 
             </dependencies>
         </profile>
