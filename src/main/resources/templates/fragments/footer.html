@@ -1,10 +1,13 @@
-<footer>
-    <div id="copyright" class="container">
+<footer xmlns:th="http://www.w3.org/1999/xhtml">
+    <!--<div id="copyright" class="container" style="text-align: center">-->
+    <div id="copyright"  style="text-align: center">
+        <!--<p th:utext="#{copyright}"></p>-->
         <p th:utext="#{copyright}"></p>
-        <p>使用 <a href="http://www.apereo.org/cas">
-            Apereo Central Authentication Service
-            <span th:text="${T(org.apereo.cas.util.CasVersion).getVersion()}"></span>
-            <span th:text="${T(org.apereo.cas.util.CasVersion).getDateTime()}"></span> </a>
-        </p>
+        <!--<p>使用-->
+        <!--&lt;!&ndash;<a href="http://www.apereo.org/cas">&ndash;&gt;-->
+        <!--&lt;!&ndash;Apereo Central Authentication Service&ndash;&gt;-->
+        <!--&lt;!&ndash;<span th:text="${T(org.apereo.cas.util.CasVersion).getVersion()}"></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;<span th:text="${T(org.apereo.cas.util.CasVersion).getDateTime()}"></span> </a>&ndash;&gt;-->
+        <!--</p>-->
     </div>
 </footer>
