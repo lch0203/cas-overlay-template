@@ -1,0 +1,7 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^https?://192.168.141.17.*",
+  "name" : "192.168.141.17",
+  "id" : 2,
+  "description" : "Allows 192.168.141.17 cas-management services"
+}
