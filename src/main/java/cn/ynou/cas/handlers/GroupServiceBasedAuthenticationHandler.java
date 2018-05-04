@@ -1,11 +1,9 @@
 package cn.ynou.cas.handlers;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apereo.cas.adaptors.jdbc.AbstractJdbcUsernamePasswordAuthenticationHandler;
 import org.apereo.cas.authentication.HandlerResult;
 import org.apereo.cas.authentication.PreventedException;
 import org.apereo.cas.authentication.UsernamePasswordCredential;
-import org.apereo.cas.authentication.handler.support.AbstractUsernamePasswordAuthenticationHandler;
 import org.apereo.cas.authentication.principal.PrincipalFactory;
 import org.apereo.cas.authentication.principal.WebApplicationService;
 import org.apereo.cas.services.ServicesManager;
@@ -22,17 +20,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class MyUsernamePasswordAuthenticationHandler  extends AbstractJdbcUsernamePasswordAuthenticationHandler {
+public class GroupServiceBasedAuthenticationHandler extends AbstractJdbcUsernamePasswordAuthenticationHandler {
 
-    private static Logger logger = LoggerFactory.getLogger(MyUsernamePasswordAuthenticationHandler.class);
+    private static Logger logger = LoggerFactory.getLogger(GroupServiceBasedAuthenticationHandler.class);
 
-    public MyUsernamePasswordAuthenticationHandler(String name, ServicesManager servicesManager, PrincipalFactory principalFactory, Integer order, DataSource dataSource) {
+    public GroupServiceBasedAuthenticationHandler(String name, ServicesManager servicesManager, PrincipalFactory principalFactory, Integer order, DataSource dataSource) {
         super(name, servicesManager, principalFactory, order, dataSource);
     }
 
     protected HandlerResult authenticateUsernamePasswordInternal(UsernamePasswordCredential credential, String originalPassword)
             throws GeneralSecurityException, PreventedException {
-        logger.debug("running in MyUsernamePasswordAuthenticationHandler.authenticateUsernamePasswordInternal");
+        logger.debug("running in GroupServiceBasedAuthenticationHandler.authenticateUsernamePasswordInternal");
         RequestContext context = RequestContextHolder.getRequestContext();
         WebApplicationService service = WebUtils.getService(context); //WebUtils use the CAS one
         String accessingServiceId = service.getId();

@@ -1,6 +1,6 @@
 package cn.ynou.cas;
 
-import cn.ynou.cas.handlers.MyUsernamePasswordAuthenticationHandler;
+import cn.ynou.cas.handlers.GroupServiceBasedAuthenticationHandler;
 import org.apereo.cas.authentication.AuthenticationEventExecutionPlan;
 import org.apereo.cas.authentication.AuthenticationEventExecutionPlanConfigurer;
 import org.apereo.cas.authentication.AuthenticationHandler;
@@ -22,10 +22,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration("MyAuthenticationEventExecutionPlanConfiguration")
-public class MyAuthenticationEventExecutionPlanConfiguration
+public class GroupServiceBasedAuthenticationEventExecutionPlanConfiguration
                     implements AuthenticationEventExecutionPlanConfigurer {
 
-    private static Logger logger = LoggerFactory.getLogger(MyAuthenticationEventExecutionPlanConfiguration.class);
+    private static Logger logger = LoggerFactory.getLogger(GroupServiceBasedAuthenticationEventExecutionPlanConfiguration.class);
 
 
     @Autowired
@@ -52,7 +52,7 @@ public class MyAuthenticationEventExecutionPlanConfiguration
         QueryJdbcAuthenticationProperties queryJdbcAuthenticationProperties = jdbc.getQuery().get(0);
         logger.debug("queryJdbcAuthenticationProperties is {}", queryJdbcAuthenticationProperties);
 
-        MyUsernamePasswordAuthenticationHandler handler = new MyUsernamePasswordAuthenticationHandler(queryJdbcAuthenticationProperties.getName(), servicesManager,
+        GroupServiceBasedAuthenticationHandler handler = new GroupServiceBasedAuthenticationHandler(queryJdbcAuthenticationProperties.getName(), servicesManager,
                 jdbcPrincipalFactory(), queryJdbcAuthenticationProperties.getOrder(), JpaBeans.newDataSource(queryJdbcAuthenticationProperties));
         /*
             Configure the handler by invoking various setter methods.
