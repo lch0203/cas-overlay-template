@@ -67,7 +67,7 @@
     </build>
 
     <properties>
-        <cas.version>5.2.3</cas.version>
+        <cas.version>5.2.4</cas.version>
         <springboot.version>1.5.8.RELEASE</springboot.version>
         <!-- app.server could be -jetty, -undertow, -tomcat, or blank if you plan to provide appserver -->
         <app.server>-tomcat</app.server>
@@ -89,7 +89,7 @@
             <layout>default</layout>
             <releases>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <updatePolicy>never</updatePolicy>
             </releases>
             <snapshots>
                 <enabled>false</enabled>
@@ -128,7 +128,7 @@
             <layout>default</layout>
             <releases>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <updatePolicy>never</updatePolicy>
             </releases>
         </pluginRepository>
     </pluginRepositories>
@@ -160,12 +160,41 @@
                     <artifactId>cas-server-support-jdbc-drivers</artifactId>
                     <version>${cas.version}</version>
                 </dependency>
-                <!-- https://apereo.github.io/cas/5.2.x/installation/JSON-Service-Management.html -->
+                <!-- https://groups.google.com/a/apereo.org/forum/#!topic/cas-user/O2xbDO9X2eA -->
+                <!-- https://apereo.github.io/cas/5.2.x/installation/Configuration-Properties.html#service-registry -->
+                <!-- https://apereo.github.io/cas/5.2.x/installation/Service-Management.html -->
                 <dependency>
                     <groupId>org.apereo.cas</groupId>
-                    <artifactId>cas-server-support-json-service-registry</artifactId>
+                    <artifactId>cas-server-support-jpa-service-registry</artifactId>
                     <version>${cas.version}</version>
                 </dependency>
+                <!-- https://apereo.github.io/cas/5.2.x/installation/JSON-Service-Management.html -->
+                <!--<dependency>-->
+                    <!--<groupId>org.apereo.cas</groupId>-->
+                    <!--<artifactId>cas-server-support-json-service-registry</artifactId>-->
+                    <!--<version>${cas.version}</version>-->
+                <!--</dependency>-->
+                <dependency>
+                    <groupId>org.apereo.cas</groupId>
+                    <artifactId>cas-server-core-authentication</artifactId>
+                    <version>${cas.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.apereo.cas</groupId>
+                    <artifactId>cas-server-core-web</artifactId>
+                    <version>${cas.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.apereo.cas</groupId>
+                    <artifactId>cas-server-core-configuration</artifactId>
+                    <version>${cas.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.apereo.cas</groupId>
+                    <artifactId>cas-server-support-jdbc-authentication</artifactId>
+                    <version>${cas.version}</version>
+                </dependency>
+
 
                 <dependency>
                     <groupId>com.oracle.jdbc</groupId>
