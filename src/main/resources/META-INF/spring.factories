@@ -1,1 +1,3 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.ynou.cas.GroupServiceBasedAuthenticationEventExecutionPlanConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.ynou.cas.GroupServiceBasedAuthenticationEventExecutionPlanConfiguration,\
+  cn.ynou.cas.config.CasConfig

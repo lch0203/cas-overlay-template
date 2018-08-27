@@ -18,7 +18,6 @@
 --
 -- Table structure for table `csessioninfo`
 --
-
 DROP TABLE IF EXISTS `csessioninfo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -33,7 +32,7 @@ CREATE TABLE `csessioninfo` (
   PRIMARY KEY (`open_id`),
   KEY `openid` (`open_id`) USING BTREE,
   KEY `skey` (`skey`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='‰ºöËØùÁÆ°ÁêÜÁî®Êà∑‰ø°ÊÅØ';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='√§¬º≈°√®¬Ø¬ù√ß¬Æ¬°√ß¬ê‚Ä†√ß‚Äù¬®√¶ÀÜ¬∑√§¬ø¬°√¶¬Å¬Ø';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,53 +44,7 @@ LOCK TABLES `csessioninfo` WRITE;
 /*!40000 ALTER TABLE `csessioninfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `group_service_mappings`
---
 
-DROP TABLE IF EXISTS `group_service_mappings`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `group_service_mappings` (
-  `group_id` int(11) NOT NULL,
-  `service_id` int(11) NOT NULL,
-  PRIMARY KEY (`group_id`,`service_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `group_service_mappings`
---
-
-LOCK TABLES `group_service_mappings` WRITE;
-/*!40000 ALTER TABLE `group_service_mappings` DISABLE KEYS */;
-INSERT INTO `group_service_mappings` VALUES (1,9),(1,11),(1,12);
-/*!40000 ALTER TABLE `group_service_mappings` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `groups`
---
-
-DROP TABLE IF EXISTS `groups`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `groups` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `groups`
---
-
-LOCK TABLES `groups` WRITE;
-/*!40000 ALTER TABLE `groups` DISABLE KEYS */;
-INSERT INTO `groups` VALUES (1,'test');
-/*!40000 ALTER TABLE `groups` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `regexregisteredservice`
@@ -172,18 +125,9 @@ CREATE TABLE `regexregisteredservice` (
   `signIdToken` bit(1) DEFAULT NULL,
   `subjectType` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `regexregisteredservice`
---
-
-LOCK TABLES `regexregisteredservice` WRITE;
-/*!40000 ALTER TABLE `regexregisteredservice` DISABLE KEYS */;
-INSERT INTO `regexregisteredservice` VALUES ('regex',11,'¨Ì\0sr\0>org.apereo.cas.services.DefaultRegisteredServiceAccessStrategyH V(≠\0Z\0caseInsensitiveZ\0enabledI\0orderZ\0requireAllAttributesZ\0\nssoEnabledL\0rejectedAttributest\0Ljava/util/Map;L\0requiredAttributesq\0~\0L\0unauthorizedRedirectUrlt\0Ljava/net/URI;xp\0\0\0\0\0sr\0java.util.HashMap⁄¡√`—\0F\0\nloadFactorI\0	thresholdxp?@\0\0\0\0\0\0w\0\0\0\0\0\0\0xsq\0~\0?@\0\0\0\0\0\0w\0\0\0\0\0\0\0xp','¨Ì\0sr\0;org.apereo.cas.services.ReturnAllowedAttributeReleasePolicyØÁìœ¶\'\0L\0allowedAttributest\0Ljava/util/List;xr\0Gorg.apereo.cas.services.AbstractRegisteredServiceAttributeReleasePolicyIÁ÷slõ\0Z\0+authorizedToReleaseAuthenticationAttributesZ\0%authorizedToReleaseCredentialPasswordZ\0&authorizedToReleaseProxyGrantingTicketZ\0excludeDefaultAttributesL\0\rconsentPolicyt\08Lorg/apereo/cas/services/RegisteredServiceConsentPolicy;L\0principalAttributesRepositoryt\0GLorg/apereo/cas/authentication/principal/PrincipalAttributesRepository;L\0principalIdAttributet\0Ljava/lang/String;L\0 registeredServiceAttributeFiltert\0:Lorg/apereo/cas/services/RegisteredServiceAttributeFilter;xp\0\0\0sr\0Eorg.apereo.cas.services.consent.DefaultRegisteredServiceConsentPolicyŸâ°‘øI\0Z\0enabledL\0excludedAttributest\0Ljava/util/Set;L\0includeOnlyAttributesq\0~\0	xpppsr\0Lorg.apereo.cas.authentication.principal.DefaultPrincipalAttributesRepository¡+(r_™É\0\0xr\0Sorg.apereo.cas.authentication.principal.cache.AbstractPrincipalAttributesRepositoryX öƒ§0b\0J\0\nexpirationL\0mergingStrategyt\0eLorg/apereo/cas/authentication/principal/cache/AbstractPrincipalAttributesRepository$MergingStrategy;L\0timeUnitq\0~\0xp\0\0\0\0\0\0\0pt\0HOURSppsr\0java.util.ArrayListxÅ“ô«aù\0I\0sizexp\0\0\0\0w\0\0\0\0x','Apereo foundation sample service',1,'¨Ì\0sr\0@org.apereo.cas.services.DefaultRegisteredServiceExpirationPolicyFﬁy¨ç<Ã\0Z\0deleteWhenExpiredZ\0notifyWhenDeletedL\0expirationDatet\0Ljava/lang/String;xp\0\0p',NULL,NULL,1,NULL,'¨Ì\0sr\0Aorg.apereo.cas.services.DefaultRegisteredServiceMultifactorPolicy’j‚›àYs?\0Z\0\rbypassEnabledL\0failureModet\0ILorg/apereo/cas/services/RegisteredServiceMultifactorPolicy$FailureModes;L\0\"multifactorAuthenticationProviderst\0Ljava/util/Set;L\0principalAttributeNameTriggert\0Ljava/lang/String;L\0principalAttributeValueToMatchq\0~\0xp\0~r\0Gorg.apereo.cas.services.RegisteredServiceMultifactorPolicy$FailureModes\0\0\0\0\0\0\0\0\0\0xr\0java.lang.Enum\0\0\0\0\0\0\0\0\0\0xpt\0NOT_SETsr\0java.util.LinkedHashSetÿl◊Zï›*\0\0xr\0java.util.HashSet∫DÖïñ∏∑4\0\0xpw\0\0\0?@\0\0\0\0\0\0xpp','Apereo',NULL,'¨Ì\0sr\0:org.apereo.cas.services.RefuseRegisteredServiceProxyPolicy∞§\0n√XÊT\0\0xp',NULL,'¨Ì\0sr\0java.util.HashSet∫DÖïñ∏∑4\0\0xpw\0\0\0?@\0\0\0\0\0\0x','^https://www.apereo.org','apereo','¨Ì\0sr\0@org.apereo.cas.services.DefaultRegisteredServiceUsernameProviderP“˜F%ôaW\0\0xr\0Forg.apereo.cas.services.BaseRegisteredServiceUsernameAttributeProviderãØ∫úwV8q\0Z\0encryptUsernameL\0canonicalizationModet\0Ljava/lang/String;xp\0t\0NONE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('regex',9,'¨Ì\0sr\0>org.apereo.cas.services.DefaultRegisteredServiceAccessStrategyH V(≠\0Z\0caseInsensitiveZ\0enabledI\0orderZ\0requireAllAttributesZ\0\nssoEnabledL\0rejectedAttributest\0Ljava/util/Map;L\0requiredAttributesq\0~\0L\0unauthorizedRedirectUrlt\0Ljava/net/URI;xp\0\0\0\0\0sr\0java.util.HashMap⁄¡√`—\0F\0\nloadFactorI\0	thresholdxp?@\0\0\0\0\0\0w\0\0\0\0\0\0\0xsq\0~\0?@\0\0\0\0\0\0w\0\0\0\0\0\0\0xp','¨Ì\0sr\0;org.apereo.cas.services.ReturnAllowedAttributeReleasePolicyØÁìœ¶\'\0L\0allowedAttributest\0Ljava/util/List;xr\0Gorg.apereo.cas.services.AbstractRegisteredServiceAttributeReleasePolicyIÁ÷slõ\0Z\0+authorizedToReleaseAuthenticationAttributesZ\0%authorizedToReleaseCredentialPasswordZ\0&authorizedToReleaseProxyGrantingTicketZ\0excludeDefaultAttributesL\0\rconsentPolicyt\08Lorg/apereo/cas/services/RegisteredServiceConsentPolicy;L\0principalAttributesRepositoryt\0GLorg/apereo/cas/authentication/principal/PrincipalAttributesRepository;L\0principalIdAttributet\0Ljava/lang/String;L\0 registeredServiceAttributeFiltert\0:Lorg/apereo/cas/services/RegisteredServiceAttributeFilter;xp\0\0\0sr\0Eorg.apereo.cas.services.consent.DefaultRegisteredServiceConsentPolicyŸâ°‘øI\0Z\0enabledL\0excludedAttributest\0Ljava/util/Set;L\0includeOnlyAttributesq\0~\0	xpppsr\0Lorg.apereo.cas.authentication.principal.DefaultPrincipalAttributesRepository¡+(r_™É\0\0xr\0Sorg.apereo.cas.authentication.principal.cache.AbstractPrincipalAttributesRepositoryX öƒ§0b\0J\0\nexpirationL\0mergingStrategyt\0eLorg/apereo/cas/authentication/principal/cache/AbstractPrincipalAttributesRepository$MergingStrategy;L\0timeUnitq\0~\0xp\0\0\0\0\0\0\0pt\0HOURSppsr\0java.util.ArrayListxÅ“ô«aù\0I\0sizexp\0\0\0\0w\0\0\0\0x','Allows only front services',0,'¨Ì\0sr\0@org.apereo.cas.services.DefaultRegisteredServiceExpirationPolicyFﬁy¨ç<Ã\0Z\0deleteWhenExpiredZ\0notifyWhenDeletedL\0expirationDatet\0Ljava/lang/String;xp\0\0p',NULL,NULL,2,NULL,'¨Ì\0sr\0Aorg.apereo.cas.services.DefaultRegisteredServiceMultifactorPolicy’j‚›àYs?\0Z\0\rbypassEnabledL\0failureModet\0ILorg/apereo/cas/services/RegisteredServiceMultifactorPolicy$FailureModes;L\0\"multifactorAuthenticationProviderst\0Ljava/util/Set;L\0principalAttributeNameTriggert\0Ljava/lang/String;L\0principalAttributeValueToMatchq\0~\0xp\0~r\0Gorg.apereo.cas.services.RegisteredServiceMultifactorPolicy$FailureModes\0\0\0\0\0\0\0\0\0\0xr\0java.lang.Enum\0\0\0\0\0\0\0\0\0\0xpt\0NOT_SETsr\0java.util.LinkedHashSetÿl◊Zï›*\0\0xr\0java.util.HashSet∫DÖïñ∏∑4\0\0xpw\0\0\0?@\0\0\0\0\0\0xpp','front',NULL,'¨Ì\0sr\0:org.apereo.cas.services.RefuseRegisteredServiceProxyPolicy∞§\0n√XÊT\0\0xp',NULL,'¨Ì\0sr\0java.util.HashSet∫DÖïñ∏∑4\0\0xpw\0\0\0?@\0\0\0\0\0\0x','^https?://front.*',NULL,'¨Ì\0sr\0@org.apereo.cas.services.DefaultRegisteredServiceUsernameProviderP“˜F%ôaW\0\0xr\0Forg.apereo.cas.services.BaseRegisteredServiceUsernameAttributeProviderãØ∫úwV8q\0Z\0encryptUsernameL\0canonicalizationModet\0Ljava/lang/String;xp\0t\0NONE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('regex',12,'¨Ì\0sr\0>org.apereo.cas.services.DefaultRegisteredServiceAccessStrategyH V(≠\0Z\0caseInsensitiveZ\0enabledI\0orderZ\0requireAllAttributesZ\0\nssoEnabledL\0rejectedAttributest\0Ljava/util/Map;L\0requiredAttributesq\0~\0L\0unauthorizedRedirectUrlt\0Ljava/net/URI;xp\0\0\0\0\0sr\0java.util.HashMap⁄¡√`—\0F\0\nloadFactorI\0	thresholdxp?@\0\0\0\0\0\0w\0\0\0\0\0\0\0xsq\0~\0?@\0\0\0\0\0\0w\0\0\0\0\0\0\0xp','¨Ì\0sr\0;org.apereo.cas.services.ReturnAllowedAttributeReleasePolicyØÁìœ¶\'\0L\0allowedAttributest\0Ljava/util/List;xr\0Gorg.apereo.cas.services.AbstractRegisteredServiceAttributeReleasePolicyIÁ÷slõ\0Z\0+authorizedToReleaseAuthenticationAttributesZ\0%authorizedToReleaseCredentialPasswordZ\0&authorizedToReleaseProxyGrantingTicketZ\0excludeDefaultAttributesL\0\rconsentPolicyt\08Lorg/apereo/cas/services/RegisteredServiceConsentPolicy;L\0principalAttributesRepositoryt\0GLorg/apereo/cas/authentication/principal/PrincipalAttributesRepository;L\0principalIdAttributet\0Ljava/lang/String;L\0 registeredServiceAttributeFiltert\0:Lorg/apereo/cas/services/RegisteredServiceAttributeFilter;xp\0\0\0sr\0Eorg.apereo.cas.services.consent.DefaultRegisteredServiceConsentPolicyŸâ°‘øI\0Z\0enabledL\0excludedAttributest\0Ljava/util/Set;L\0includeOnlyAttributesq\0~\0	xpppsr\0Lorg.apereo.cas.authentication.principal.DefaultPrincipalAttributesRepository¡+(r_™É\0\0xr\0Sorg.apereo.cas.authentication.principal.cache.AbstractPrincipalAttributesRepositoryX öƒ§0b\0J\0\nexpirationL\0mergingStrategyt\0eLorg/apereo/cas/authentication/principal/cache/AbstractPrincipalAttributesRepository$MergingStrategy;L\0timeUnitq\0~\0xp\0\0\0\0\0\0\0pt\0HOURSppsr\0java.util.ArrayListxÅ“ô«aù\0I\0sizexp\0\0\0\0w\0\0\0\0x','Allows only localhost services description',0,'¨Ì\0sr\0@org.apereo.cas.services.DefaultRegisteredServiceExpirationPolicyFﬁy¨ç<Ã\0Z\0deleteWhenExpiredZ\0notifyWhenDeletedL\0expirationDatet\0Ljava/lang/String;xp\0\0p',NULL,NULL,1,NULL,'¨Ì\0sr\0Aorg.apereo.cas.services.DefaultRegisteredServiceMultifactorPolicy’j‚›àYs?\0Z\0\rbypassEnabledL\0failureModet\0ILorg/apereo/cas/services/RegisteredServiceMultifactorPolicy$FailureModes;L\0\"multifactorAuthenticationProviderst\0Ljava/util/Set;L\0principalAttributeNameTriggert\0Ljava/lang/String;L\0principalAttributeValueToMatchq\0~\0xp\0~r\0Gorg.apereo.cas.services.RegisteredServiceMultifactorPolicy$FailureModes\0\0\0\0\0\0\0\0\0\0xr\0java.lang.Enum\0\0\0\0\0\0\0\0\0\0xpt\0NOT_SETsr\0java.util.LinkedHashSetÿl◊Zï›*\0\0xr\0java.util.HashSet∫DÖïñ∏∑4\0\0xpw\0\0\0?@\0\0\0\0\0\0xpp','localhost',NULL,'¨Ì\0sr\0:org.apereo.cas.services.RefuseRegisteredServiceProxyPolicy∞§\0n√XÊT\0\0xp',NULL,'¨Ì\0sr\0java.util.HashSet∫DÖïñ∏∑4\0\0xpw\0\0\0?@\0\0\0\0\0\0x','^https?://localhost.*',NULL,'¨Ì\0sr\0@org.apereo.cas.services.DefaultRegisteredServiceUsernameProviderP“˜F%ôaW\0\0xr\0Forg.apereo.cas.services.BaseRegisteredServiceUsernameAttributeProviderãØ∫úwV8q\0Z\0encryptUsernameL\0canonicalizationModet\0Ljava/lang/String;xp\0t\0NONE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-/*!40000 ALTER TABLE `regexregisteredservice` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `regexregisteredserviceproperty`
@@ -284,81 +228,6 @@ LOCK TABLES `registeredserviceimplcontact` WRITE;
 /*!40000 ALTER TABLE `registeredserviceimplcontact` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `user_group_mappings`
---
-
-DROP TABLE IF EXISTS `user_group_mappings`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_group_mappings` (
-  `user_id` int(11) NOT NULL,
-  `group_id` int(11) NOT NULL,
-  PRIMARY KEY (`user_id`,`group_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_group_mappings`
---
-
-LOCK TABLES `user_group_mappings` WRITE;
-/*!40000 ALTER TABLE `user_group_mappings` DISABLE KEYS */;
-INSERT INTO `user_group_mappings` VALUES (1,1);
-/*!40000 ALTER TABLE `user_group_mappings` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `userattrs`
---
-
-DROP TABLE IF EXISTS `userattrs`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `userattrs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `uid` varchar(50) NOT NULL,
-  `attrname` varchar(50) NOT NULL,
-  `attrvalue` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `userattrs`
---
-
-LOCK TABLES `userattrs` WRITE;
-/*!40000 ALTER TABLE `userattrs` DISABLE KEYS */;
-INSERT INTO `userattrs` VALUES (1,'mmoayyed','firstname','Misagh'),(2,'mmoayyed','lastname','Moayyed'),(3,'mmoayyed','phone','+13476452319'),(4,'casuser','firstname','casuser'),(5,'casuser','lastname','casuser_lastname'),(6,'casuser','phone','11111111111');
-/*!40000 ALTER TABLE `userattrs` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `uid` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'casuser','9414f9301cdb492b4dcd83f8c711d8bb'),(2,'mmoayyed','ca541f57a3041c3b85c553d12d3e64a8');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

@@ -1,13 +1,21 @@
 /* global jqueryReady, policyPattern, zxcvbn */
 /*eslint-disable no-unused-vars*/
 function jqueryReady() {
+    // var strength = {
+    //     0: 'Worst',
+    //     1: 'Bad',
+    //     2: 'Weak',
+    //     3: 'Good',
+    //     4: 'Strong'
+    // };
     var strength = {
-        0: 'Worst',
-        1: 'Bad',
-        2: 'Weak',
-        3: 'Good',
-        4: 'Strong'
+        0: '密码太过于简单',
+        1: '密码太简单',
+        2: '密码强度一般',
+        3: '密码强度很好',
+        4: '密码强度非常好'
     };
+
     
     $.fn.zxcvbnProgressBar = function (options) {
 
@@ -96,7 +104,8 @@ function jqueryReady() {
             $('#password-strength-text').show();
             responseText = '<div class=\'alert alert-danger\' role=\'alert\'>' +
                 '<span class=\'glyphicon glyphicon-exclamation-sign\' aria-hidden=\'true\'></span>' +
-                '<strong>Password does not match the password policy requirement.</strong></div>';
+                // '<strong>Password does not match the password policy requirement.</strong></div>';
+                '<strong>您输入的密码与密码策略要求不匹配,长度至少6位,且两次输入须一致.</strong></div>';
             $('#password-strength-text').html(responseText);
             return;
         }
@@ -105,27 +114,35 @@ function jqueryReady() {
         if (val !== '') {
             $('#password-strength-text').show();
 
-            var title = 'Strength: <strong>' + strength[result.score] + '</strong>';
-            var text = '<p><span class=\'feedback\'>' + result.feedback.warning + ' ' + result.feedback.suggestions + '</span></p>';
+            var title = '<strong>' + strength[result.score] + '</strong>';
+            // var title = '密码强度: <strong>' + strength[result.score] + '</strong>';
+            // var text = '<p><span class=\'feedback\'>' + result.feedback.warning + ' ' + result.feedback.suggestions + '</span></p>';
+            // var text = '<p><span class=\'feedback\'>' + '建议使用强度更高的密码'+ '</span></p>';
+            var text = '';
             var clz = 'danger';
             switch (result.score) {
             case 0:
             case 1:
                 clz = 'danger';
+                text  = '<p><span class=\'feedback\'>' + '建议使用强度更高的密码'+ '</span></p>';
                 break;
             case 2:
                 clz = 'warning';
+                text  = '<p><span class=\'feedback\'>' + '建议使用强度更高的密码'+ '</span></p>';
                 break;
             case 3:
                 clz = 'info';
+                text  = '<p><span class=\'feedback\'>' + '建议使用强度更高的密码'+ '</span></p>';
                 break;
             case 4:
             case 5:
             default:
                 clz = 'success';
+                text  = '<p><span class=\'feedback\'>' + '很好,密码强度足够'+ '</span></p>';
                 break;
             }
-            responseText = '<div class=\'alert alert-' + clz + '\'>' + title + text + '</div>';
+            responseText = '<div class=\'alert alert-' + clz + '\'>' + text + '</div>';
+            // responseText = '<div class=\'alert alert-' + clz + '\'>' + title + text + '</div>';
             $('#password-strength-text').html(responseText);
         } else {
             $('#password-strength-text').hide();
