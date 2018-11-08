@@ -1,7 +1,7 @@
 <div class="box" id="login">
     <div class="login-header">
         <h2 th:text="#{cas.login.pagetitle}"></h2>
-        
+
         <span class="fa-stack fa-2x hidden-xs">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
@@ -26,7 +26,8 @@
                 <input type="hidden"
                        id="username"
                        name="username"
-                       th:value="${openIdLocalId}"/>
+                       th:value="${openIdLocalId}"
+                />
             </div>
             <div th:unless="${openIdLocalId}">
                 <input class="required"
@@ -64,7 +65,8 @@
 
         <section class="row check">
             <p th:if="${passwordManagementEnabled}">
-                <input type="checkbox" name="doChangePassword" id="doChangePassword" value="true" th:checked="${param.doChangePassword != null}" tabindex="4"/>
+                <input style="margin-top: 0px" type="checkbox" name="doChangePassword" id="doChangePassword"
+                       value="true" th:checked="${param.doChangePassword != null}" tabindex="4"/>
                 <label for="doChangePassword" th:text="#{screen.button.changePassword}"/>
             </p>
         </section>
